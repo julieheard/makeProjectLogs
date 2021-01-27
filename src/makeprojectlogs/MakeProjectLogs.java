@@ -20,8 +20,7 @@ public class MakeProjectLogs {
     public static void main(String[] args) {
         System.out.println("Hi future Julie :) "
                 + "\nIn a folder put a text document with all of the student names called 'StudentNames', and in the same file put other files you want to copy (any filetype)"
-                + "\nLast time you used the Current Project Log folder to put these into."
-                + "\nThis program will make a new folder for each of the students and copy the files into it with the file name and their name appended.\n");
+                + "\nThis program will make a new folder for each of the students in the text file and will copy the other files into it.\n");
         getFileLocation();
         //This gets a list of the files in the sourceFileLocation
         File f = new File(SourceFileLocation);
@@ -37,11 +36,11 @@ public class MakeProjectLogs {
     //Type in fodler name of where they are stored
     public static void getFileLocation() {
         Scanner input = new Scanner(System.in);
-        System.out.println("Copy and paste in source file location for project log you want to copy");
+        System.out.println("Copy and paste in here source file location for files and textfile of studentNames you want to copy");
         SourceFileLocation = input.nextLine();
 
         //append name of file to sourceFileLocation
-        System.out.println("\nCopy and paste in destination file location for destination folder");
+        System.out.println("Copy and paste in here destination file location for where you want your files created");
         DestinationFileLocation = input.nextLine();
     }
 
