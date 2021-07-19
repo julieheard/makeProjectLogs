@@ -18,9 +18,10 @@ public class MakeProjectLogs {
     private static int studentFileIndexInDir;
 
     public static void main(String[] args) {
-        System.out.println("Hi future Julie :) "
-                + "\nIn a folder put a text document with all of the student names called 'StudentNames', and in the same file put other files you want to copy (any filetype)"
-                + "\nThis program will make a new folder for each of the students in the text file and will copy the other files into it.\n");
+        System.out.println("Hi "
+                + "\nIn a folder put a text document with all of the student names in, call it 'StudentNames.txt', and in the same file put other files you want to copy (any filetype)."
+                + "\nYou will need to know the source of where the files are currently stored, and will need to make a new folder to put all of the new files in (the destination folder).\n"
+                + "\nIn your destination folder, this program will make a new folder for each of the student names in the text file and will copy the other files from the source folder into it as well as change the file names to the student names.\n");
         getFileLocation();
         //This gets a list of the files in the sourceFileLocation
         File f = new File(SourceFileLocation);
@@ -68,8 +69,7 @@ public class MakeProjectLogs {
                         Files.copy(Paths.get(SourceFileLocation + "\\" + pathnames[j]), Paths.get(DestinationFileLocation + "\\" +StudentNames.get(i)+"\\"+ StudentNames.get(i) + " " + pathnames[j]), StandardCopyOption.COPY_ATTRIBUTES);
                         System.out.println("file created for " + StudentNames.get(i));
                     }
-                    System.out.println(StudentNames.size() + "file(s) created");
-
+                    
                 } catch (Exception e) {
                     System.out.println(e);
                 }
@@ -77,6 +77,7 @@ public class MakeProjectLogs {
             }
 
         }
+        System.out.println(StudentNames.size() + "file(s) created");
     }
 
     //If studentNames file does not exist it returns false, otherwise returns true
